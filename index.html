@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+function plantillaBase_() {
+  return `<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -6,34 +7,150 @@
   <title>Recopilatorio de cuadernos</title>
   <style>
     :root {
-      --bg: #f4f7f9;
+      --bg: #f3f6f9;
       --surface: #ffffff;
+      --surface-2: #f8fbff;
       --primary: #004a99;
       --primary-2: #0b66c3;
-      --text: #24323f;
-      --muted: #6b7a88;
-      --border: #dbe4ec;
+      --text: #203040;
+      --muted: #6c7b88;
+      --border: #d9e3ec;
       --cat: #3498db;
       --conf: #e74c3c;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --shadow: 0 10px 24px rgba(0,0,0,0.07);
       --radius: 14px;
     }
+
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); }
-    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
-    .header-master { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color: white; padding: 32px 24px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 24px; }
-    .header-master h1 { margin: 0 0 8px 0; font-size: 32px; }
-    .header-master p { margin: 0; opacity: 0.92; }
-    .grid { display: grid; gap: 20px; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-    .badge { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: .03em; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .header-master {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .header-master h1 {
+      margin: 0 0 8px 0;
+      font-size: 30px;
+    }
+
+    .header-master p {
+      margin: 0;
+      opacity: .95;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
     .badge-cat { background: var(--cat); }
     .badge-conf { background: var(--conf); }
-    h2 { margin: 0 0 12px 0; color: var(--primary); font-size: 24px; }
-    p { margin: 0 0 18px 0; line-height: 1.6; }
-    .btn { display: inline-block; background: var(--primary); color: white; text-decoration: none; padding: 12px 18px; border-radius: 10px; font-weight: 700; }
-    .footer-card { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+
+    h2 {
+      margin: 0 0 10px 0;
+      color: var(--primary);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .info {
+      margin: 0 0 16px 0;
+      line-height: 1.55;
+      color: var(--text);
+      flex-grow: 1;
+    }
+
+    .link-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: auto;
+    }
+
+    .link-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .notebook-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .notebook-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-card {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 14px; }
+      .header-master { padding: 20px 16px; }
+      .header-master h1 { font-size: 24px; }
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -44,32 +161,9 @@
     </header>
 
     <main id="main-content" class="grid">
-      
-    <article class="card">
-      <div class="meta">
-        <span class="badge badge-cat">Análisis de Datos/Técnico</span>
-        <span class="badge badge-conf">Público</span>
-      </div>
-      <h2>3</h2>
-      <p>3</p>
-      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">ABRIR RECURSO</a>
-      <div class="footer-card">Registrado el: 06/05/2026 09:18:21</div>
-    </article>
-  
-
-    <article class="card">
-      <div class="meta">
-        <span class="badge badge-cat">Análisis de Datos/Técnico</span>
-        <span class="badge badge-conf">Público</span>
-      </div>
-      <h2>4</h2>
-      <p>añlsfkdjas </p>
-      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">ABRIR RECURSO</a>
-      <div class="footer-card">Registrado el: 06/05/2026 09:19:36</div>
-    </article>
-  
-<!-- NUEVOS_REGISTROS_AQUI -->
+      <!-- NUEVOS_REGISTROS_AQUI -->
     </main>
   </div>
 </body>
-</html>
+</html>`;
+}
