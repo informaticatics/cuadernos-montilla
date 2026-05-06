@@ -6,31 +6,143 @@
   <title>Recopilatorio de cuadernos</title>
   <style>
     :root {
-      --bg: #f3f6f9; --surface: #ffffff; --surface-2: #f8fbff;
-      --primary: #004a99; --primary-2: #0b66c3;
-      --text: #203040; --muted: #6c7b88; --border: #d9e3ec;
-      --cat: #3498db; --conf: #e74c3c;
-      --shadow: 0 10px 24px rgba(0,0,0,0.07); --radius: 14px;
+      --bg: #f3f6f9;
+      --surface: #ffffff;
+      --surface-2: #f8fbff;
+      --primary: #004a99;
+      --primary-2: #0b66c3;
+      --text: #203040;
+      --muted: #6c7b88;
+      --border: #d9e3ec;
+      --cat: #3498db;
+      --conf: #e74c3c;
+      --shadow: 0 10px 24px rgba(0,0,0,0.07);
+      --radius: 14px;
     }
+
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); }
-    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
-    .header-master { background: linear-gradient(135deg, var(--primary), var(--primary-2)); color: white; padding: 28px 24px; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 24px; }
-    .header-master h1 { margin: 0 0 8px 0; font-size: 30px; }
-    .header-master p { margin: 0; opacity: .95; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; align-items: start; }
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
-    .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-    .badge { display: inline-block; padding: 6px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: .03em; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .header-master {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white;
+      padding: 28px 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .header-master h1 {
+      margin: 0 0 8px 0;
+      font-size: 30px;
+    }
+
+    .header-master p {
+      margin: 0;
+      opacity: .95;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
     .badge-cat { background: var(--cat); }
     .badge-conf { background: var(--conf); }
-    h2 { margin: 0 0 10px 0; color: var(--primary); font-size: 22px; line-height: 1.25; }
-    .info { margin: 0 0 16px 0; line-height: 1.55; flex-grow: 1; }
-    .link-box { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-top: auto; }
-    .link-label { display: block; font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
-    .notebook-link { color: var(--primary); font-weight: 600; text-decoration: none; word-break: break-all; }
-    .notebook-link:hover { text-decoration: underline; }
-    .footer-card { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); }
+
+    h2 {
+      margin: 0 0 10px 0;
+      color: var(--primary);
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    .info {
+      margin: 0 0 16px 0;
+      line-height: 1.55;
+      flex-grow: 1;
+    }
+
+    .link-box {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: auto;
+    }
+
+    .link-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .notebook-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .notebook-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-card {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     @media (max-width: 640px) {
       .container { padding: 14px; }
       .header-master { padding: 20px 16px; }
@@ -47,58 +159,25 @@
     </header>
     <main id="main-content" class="grid">
       
-  <article class="card">
-    <div class="meta">
-      <span class="badge badge-cat">Análisis de Datos/Técnico</span>
-      <span class="badge badge-conf">Público</span>
-    </div>
-    <h2>1</h2>
-    <p class="info">ifnormacion</p>
-    <div class="link-box">
-      <span class="link-label">Cuaderno Notebook</span>
-      <a href="#" class="notebook-link" target="_blank" rel="noopener noreferrer">
-        #
-      </a>
-    </div>
-    <div class="footer-card">Registrado el: 06/05/2026 11:26:17</div>
-  </article>
-
-  <article class="card">
-    <div class="meta">
-      <span class="badge badge-cat">Análisis de Datos/Técnico</span>
-      <span class="badge badge-conf">Público</span>
-    </div>
-    <h2>2</h2>
-    <p class="info">nada</p>
-    <div class="link-box">
-      <span class="link-label">Cuaderno Notebook</span>
-      <a href="https://www.montilla.es" class="notebook-link" target="_blank" rel="noopener noreferrer">
-        https://www.montilla.es
-      </a>
-    </div>
-    <div class="footer-card">Registrado el: 06/05/2026 11:29:39</div>
-  </article>
-
-  <article class="card">
-    <div class="meta">
-      <span class="badge badge-cat">Documentación Administrativa</span>
-      <span class="badge badge-conf">Público</span>
-    </div>
-    <h2>Normativa Municipal</h2>
-    <p class="info">Este cuaderno recopila el marco normativo y administrativo del Ayuntamiento de Montilla, incluyendo ordenanzas fiscales detalladas sobre impuestos, tasas y precios públicos de obligatorio cumplimiento
+      <article class="card">
+        <div class="meta">
+          <span class="badge badge-cat">Documentación Administrativa</span>
+          <span class="badge badge-conf">Público</span>
+        </div>
+        <h2>Normativa Municipal</h2>
+        <p class="info">Este cuaderno recopila el marco normativo y administrativo del Ayuntamiento de Montilla, incluyendo ordenanzas fiscales detalladas sobre impuestos, tasas y precios públicos de obligatorio cumplimiento
 .
 Detalla los procedimientos para autorizaciones urbanísticas, la regulación de actividades comerciales y de ocio, así como la gestión de servicios esenciales como el suministro de agua, limpieza y participación ciudadana
 .
 Contiene además planes estratégicos de movilidad sostenible y reglamentos específicos que rigen el bienestar animal, el servicio de taxis y el uso de instalaciones municipales como el mercado de abastos o centros empresariales</p>
-    <div class="link-box">
-      <span class="link-label">Cuaderno Notebook</span>
-      <a href="https://notebooklm.google.com/notebook/a01bf964-7144-4ffc-b697-e0eed3ad83d8" class="notebook-link" target="_blank" rel="noopener noreferrer">
-        https://notebooklm.google.com/notebook/a01bf964-7144-4ffc-b697-e0eed3ad83d8
-      </a>
-    </div>
-    <div class="footer-card">Registrado el: 06/05/2026 16:34:18</div>
-  </article>
-<!-- NUEVOS_REGISTROS_AQUI -->
+        <div class="link-box">
+          <span class="link-label">Cuaderno Notebook</span>
+          <a href="https://notebooklm.google.com/notebook/a01bf964-7144-4ffc-b697-e0eed3ad83d8" class="notebook-link" target="_blank" rel="noopener noreferrer">
+            https://notebooklm.google.com/notebook/a01bf964-7144-4ffc-b697-e0eed3ad83d8
+          </a>
+        </div>
+        <div class="footer-card">Registrado el: 06/05/2026 16:34:13</div>
+      </article>
     </main>
   </div>
 </body>
